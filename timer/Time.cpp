@@ -9,52 +9,52 @@ namespace timer
     {
     }
 
-    Time::Time(int timestamp)
+    Time::Time(unsigned int timestamp)
         : timestamp(timestamp)
     {
     }
 
-    Time::Time(int days, int hours, int minutes, int seconds)
+    Time::Time(unsigned int days, unsigned int hours, unsigned int minutes, unsigned int seconds)
     {
         setTime(days, hours, minutes, seconds);
     }
 
-    int Time::getDays()
+    unsigned int Time::getDays()
     {
         return this->timestamp / 86400;
     }
 
-    int Time::getHours()
+    unsigned int Time::getHours()
     {
         return this->timestamp % 86400 / 3600;
     }
 
-    int Time::getMinutes()
+    unsigned Time::getMinutes()
     {
         return this->timestamp % 3600 / 60;
     }
 
-    int Time::getSeconds()
+    unsigned int Time::getSeconds()
     {
         return this->timestamp % 3600 % 60;
     }
 
-    void Time::setTime(int timestamp)
+    void Time::setTime(unsigned int timestamp)
     {
         this->timestamp = timestamp;
     }
 
-    void Time::setTime(int days, int hours, int minutes, int seconds)
+    void Time::setTime(unsigned int days, unsigned int hours, unsigned int minutes, unsigned int seconds)
     {
         this->timestamp = days * 86400 + hours * 3600 + minutes * 60 + seconds;
     }
 
-    void Time::up(int seconds)
+    void Time::up(unsigned int seconds)
     {
         this->timestamp += seconds;
     }
 
-    void Time::down(int seconds)
+    void Time::down(unsigned int seconds)
     {
         if (timestamp > 0)
             this->timestamp -= seconds;

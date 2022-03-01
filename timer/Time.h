@@ -8,23 +8,23 @@ namespace timer
     class Time
     {
     private:
-        int timestamp;
+        unsigned int timestamp;
 
     public:
         Time();
-        Time(int timestamp);
-        Time(int days, int hours, int minutes, int seconds);
+        Time(unsigned int timestamp);
+        Time(unsigned int days, unsigned int hours, unsigned int minutes, unsigned int seconds);
 
-        int getDays();
-        int getHours();
-        int getMinutes();
-        int getSeconds();
+        unsigned int getDays();
+        unsigned int getHours();
+        unsigned getMinutes();
+        unsigned getSeconds();
 
-        void setTime(int timestamp);
-        void setTime(int days, int hour, int minute, int second);
+        void setTime(unsigned int timestamp);
+        void setTime(unsigned int days, unsigned int hour, unsigned int minute, unsigned int second);
 
-        void up(int seconds);
-        void down(int seconds);
+        void up(unsigned seconds);
+        void down(unsigned int seconds);
 
         std::string toString();
         Time operator+ (const Time t);
