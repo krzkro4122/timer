@@ -5,43 +5,65 @@
 int main()
 {
     // Test #1
-    std::cout << "Test case #1 in progress..." << std::endl;
+    {
+        std::cout << "Test case #1 in progress..." << std::endl;
 
-    int timestamp = 101069;
-    timer::Time t(timestamp);
-    std::cout << t << std::endl;
+        int timestamp = 101069;
+        timer::Time t(timestamp);
+        std::cout << t << std::endl;
 
-    assert(t.getDays() == 1);
-    assert(t.getHours() == 4);
-    assert(t.getMinutes() == 4);
-    assert(t.getSeconds() == 29);
+        assert(t.getDays() == 1);
+        assert(t.getHours() == 4);
+        assert(t.getMinutes() == 4);
+        assert(t.getSeconds() == 29);
 
-    t.up(1);
-    std::cout << t << std::endl;
+        t.up(1);
+        std::cout << t << std::endl;
 
-    t.up(1203012401203401); 
-    std::cout << t << std::endl;
+        t.up(1203012401203401);
+        std::cout << t << std::endl;
 
-    t.setTime(0, 1, 1, 1);
-    std::cout << t << std::endl;
-
+        t.setTime(0, 1, 1, 1);
+        std::cout << t << std::endl;
+    }
     std::cout << "Test case #1 passed." << std::endl;
 
     // Test #2
-    std::cout << "Test case #2 in progress..." << std::endl;
+    {
+        std::cout << "Test case #2 in progress..." << std::endl;
 
-    timer::Time t1(0, 0, 0, 0);
+        timer::Time t(0, 0, 0, 0);
 
-    t1.down(12314);
-    t1.down(0);
-    t1.down(1);
+        t.down(12314);
+        t.down(0);
+        t.down(1);
 
-    assert(t1.getDays() == 0);
-    assert(t1.getHours() == 0);
-    assert(t1.getMinutes() == 0);
-    assert(t1.getSeconds() == 0);
-
+        assert(t.getDays() == 0);
+        assert(t.getHours() == 0);
+        assert(t.getMinutes() == 0);
+        assert(t.getSeconds() == 0);
+    }
     std::cout << "Test case #2 passed." << std::endl;
+
+    // Test #3
+    {
+        std::cout << "Test case #3 in progress..." << std::endl;
+
+        timer::Time t1(4, 3, 2, 1);
+        timer::Time t2(1, 2, 3, 4);
+
+        std::cout << t1;
+
+        t1 = t1 + t2;
+
+        assert(t1.getDays() == 5);
+        assert(t1.getHours() == 5);
+        assert(t1.getMinutes() == 5);
+        assert(t1.getSeconds() == 5);
+
+        std::cout << " + " << t2 << " = " << t1 << std::endl;
+    }
+    std::cout << "Test case #3 passed." << std::endl;
 
     return 0;
 }

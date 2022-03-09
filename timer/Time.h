@@ -23,7 +23,7 @@ namespace timer
         void setTime(unsigned int timestamp);
         void setTime(unsigned int days, unsigned int hour, unsigned int minute, unsigned int second);
 
-        void up(unsigned seconds);
+        void up(unsigned int seconds);
         void down(unsigned int seconds);
 
         std::string toString();

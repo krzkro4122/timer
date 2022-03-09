@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <assert.h>
 #include "Time.h"
 
@@ -67,8 +68,11 @@ namespace timer
         if (this->getDays() != 0)
             ss << this->getDays() << "d ";
 
-        ss << this->getHours() << ":"
+        ss << std::setfill('0') << std::setw(2)
+            << this->getHours() << ":"
+            << std::setfill('0') << std::setw(2)
             << this->getMinutes() << ":"
+            << std::setfill('0') << std::setw(2)
             << this->getSeconds();
 
         return ss.str();
