@@ -1,6 +1,6 @@
+#include "Time.h"
 #include <assert.h>
 #include <iostream>
-#include "Time.h"
 
 int main()
 {

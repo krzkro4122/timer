@@ -55,10 +55,17 @@ namespace timer
         this->timestamp += seconds;
     }
 
-    void Time::down(unsigned int seconds)
+    int Time::down(unsigned int seconds)
     {
-        if (timestamp > 0)
+        if (this->timestamp - seconds > 0)
+        {
             this->timestamp -= seconds;
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
     std::string Time::toString()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Time.h"
+#include "../Time/Time.h"
 
 namespace timer {
 
@@ -9,7 +9,7 @@ namespace timer {
 		Time time;
 
 	public:
-
+		int countdown(Time countStart);
 	};
 
 }

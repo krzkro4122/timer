@@ -24,7 +24,7 @@ namespace timer
         void setTime(unsigned int days, unsigned int hour, unsigned int minute, unsigned int second);
 
         void up(unsigned int seconds);
-        void down(unsigned int seconds);
+        int down(unsigned int seconds);
 
         std::string toString();
         Time operator+ (const Time t);
