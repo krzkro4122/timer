@@ -6,7 +6,7 @@ int main()
 {
     // Test #1
     {
-        std::cout << "Test case #1 in progress..." << std::endl;
+        std::cout << "\033[36m" << "Test case #1 in progress..." << "\033[0m" << std::endl;
 
         int timestamp = 101069;
         timer::Time t(timestamp);
@@ -26,11 +26,11 @@ int main()
         t.setTime(0, 1, 1, 1);
         std::cout << t << std::endl;
     }
-    std::cout << "Test case #1 passed." << std::endl;
+    std::cout << "\033[32m" << "Test case #1 passed." << "\033[0m" << std::endl;
 
     // Test #2
     {
-        std::cout << "Test case #2 in progress..." << std::endl;
+        std::cout << "\033[36m" << "Test case #2 in progress..." << "\033[0m" << std::endl;
 
         timer::Time t(0, 0, 0, 0);
 
@@ -43,11 +43,11 @@ int main()
         assert(t.getMinutes() == 0);
         assert(t.getSeconds() == 0);
     }
-    std::cout << "Test case #2 passed." << std::endl;
+    std::cout << "\033[32m" << "Test case #2 passed." << "\033[0m" << std::endl;
 
     // Test #3
     {
-        std::cout << "Test case #3 in progress..." << std::endl;
+        std::cout << "\033[36m" << "Test case #3 in progress..." << "\033[0m" << std::endl;
 
         timer::Time t1(4, 3, 2, 1);
         timer::Time t2(1, 2, 3, 4);
@@ -63,7 +63,7 @@ int main()
 
         std::cout << " + " << t2 << " = " << t1 << std::endl;
     }
-    std::cout << "Test case #3 passed." << std::endl;
+    std::cout << "\033[32m" << "Test case #3 passed." << "\033[0m" << std::endl;
 
     return 0;
 }
