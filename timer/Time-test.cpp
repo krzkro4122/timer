@@ -42,6 +42,8 @@ int main()
         assert(t.getHours() == 0);
         assert(t.getMinutes() == 0);
         assert(t.getSeconds() == 0);
+
+        std::cout << t << std::endl;
     }
     std::cout << "\033[32m" << "Test case #2 passed." << "\033[0m" << std::endl;
 

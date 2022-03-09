@@ -65,15 +65,21 @@ namespace timer
     {
         std::stringstream ss;
 
+        // Only show time values if they are more than 0
         if (this->getDays() != 0)
             ss << this->getDays() << "d ";
 
-        ss << std::setfill('0') << std::setw(2)
-            << this->getHours() << ":"
-            << std::setfill('0') << std::setw(2)
-            << this->getMinutes() << ":"
-            << std::setfill('0') << std::setw(2)
-            << this->getSeconds();
+        if (this->getHours() != 0)
+            ss << std::setfill('0') << std::setw(2) << this->getHours() << ":";
+
+        if (this->getMinutes() != 0)
+            ss << std::setfill('0') << std::setw(2) << this->getMinutes() << ":";
+        
+        // But always show seconds
+        ss << std::setfill('0') << std::setw(2) << this->getSeconds();
+
+        if (this->timestamp < 60)
+            ss << "s";
 
         return ss.str();
     }
